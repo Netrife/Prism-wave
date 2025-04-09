@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrismShop</title>
+    <style>
+        body { font-family: Montserrat, sans-serif; }
+        .product { margin: 20px; padding: 10px; border: 1px solid #ccc; }
+        .cart { margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <h1>Product of the Shop</h1>
+
+    <div id="products">
+        <div class="product">
+            <h2>Key of Sky Kingdom</h2>
+            <p>Price: $100.000</p>
+            <button onclick="addToCart('Key of Sky Kingdom', 100.000)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <h2>Dokumen Asli Supersemar</h2>
+            <p>Price: $2000</p>
+            <button onclick="addToCart('Dokumen Asli Supersemar', 2000)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <h2>Product 3</h2>
+            <p>Price: $30</p>
+            <button onclick="addToCart('Product 3', 30)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="cart">
+        <h2>Cart</h2>
+        <ul id="cartItems"></ul>
+        <p>Total: $<span id="totalPrice">0</span></p>
+        <button onclick="checkout()">Checkout</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
