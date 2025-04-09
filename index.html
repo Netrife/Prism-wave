@@ -3,37 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PrismShop</title>
-    <style>
-        body { font-family: Montserrat, sans-serif; }
-        .product { margin: 20px; padding: 10px; border: 1px solid #ccc; }
-        .cart { margin-top: 20px; }
-    </style>
+    <title>Shopping Website</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
 </head>
 <body>
 
-    <h1>Product of the Shop</h1>
+    <h1>Shopping Website</h1>
 
     <div id="products">
         <div class="product">
-            <h2>Key of Sky Kingdom</h2>
-            <p>Price: $100.000</p>
-            <button onclick="addToCart('Key of Sky Kingdom', 100.000)">Add to Cart</button>
+            <h2>Peta Republik Indonesia Serikat | Termasuk berbagai Kerajaan</h2>
+            <p>Price: Rp. 278.000</p>
+            <button onclick="addToCart('Peta Republik Indonesia Serikat | Termasuk berbagai Kerajaan', 278.000)">Add to Cart</button>
         </div>
         <div class="product">
-            <h2>Dokumen Asli Supersemar</h2>
-            <p>Price: $2000</p>
-            <button onclick="addToCart('Dokumen Asli Supersemar', 2000)">Add to Cart</button>
+            <h2>Produk Gula Jawa Hitam | Varian Bango</h2>
+            <p>Price: Rp.300.000</p>
+            <button onclick="addToCart('Produk Gula Jawa Hitam | Varian Bango', 300.000)">Add to Cart</button>
         </div>
         <div class="product">
-            <h2>Product 3</h2>
-            <p>Price: $30</p>
-            <button onclick="addToCart('Product 3', 30)">Add to Cart</button>
+            <h2>Sempak Ronaldo</h2>
+            <p>Price: Rp.1.240.000</p>
+            <button onclick="addToCart('Sempak Ronaldo', 1.240.000)">Add to Cart</button>
         </div>
     </div>
 
     <div class="cart">
-        <h2>Cart</h2>
+        <h2>Shopping Cart</h2>
         <ul id="cartItems"></ul>
         <p>Total: $<span id="totalPrice">0</span></p>
         <button onclick="checkout()">Checkout</button>
