@@ -1,96 +1,58 @@
 body {
-    font-family: Times New Roman, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #1a1a2e; /* Night sky color */
+    color: #ffffff; /* White text color */
+    font-family: Montserrat, sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 0;
 }
 
 h1 {
     text-align: center;
-    color: #333;
+    margin: 20px 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
 }
 
 #products {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
 }
 
 .product {
-    background: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
     padding: 20px;
-    width: 200px;
-    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-.product h2 {
-    font-size: 1.5em;
-    color: #333;
-}
-
-.product p {
-    font-size: 1.2em;
-    color: #666;
-}
-
-.product button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+button {
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff; /* White border */
+    padding: 10px 20px;
+    font-size: 16px;
     cursor: pointer;
-    font-size: 1em;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.product button:hover {
-    background-color: #218838;
+button:hover {
+    background-color: #ffffff; /* White background on hover */
+    color: #1a1a2e; /* Dark text on hover */
 }
 
 .cart {
-    background: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
     padding: 20px;
-    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-.cart h2 {
-    font-size: 1.5em;
-    color: #333;
-}
-
-.cart ul {
+#cartItems {
     list-style-type: none;
     padding: 0;
-}
-
-.cart li {
-    padding: 5px 0;
-    border-bottom: 1px solid #eee;
-}
-
-.cart p {
-    font-size: 1.2em;
-    color: #333;
-}
-
-.cart button {
-    background-color: #007bff;
-    color: green;
-    border: black;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-}
-
-.cart button:hover {
-    background-color: #0056b3;
 }
