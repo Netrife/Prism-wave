@@ -3,152 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prismatic Shop</title>
+    <title>Kedai Budak Jawa</title>
     <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
-    <style>
-        body {
-            background-color: #1a1a2e; /* Night sky color */
-            color: #ffffff; /* White text color */
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
-
-        button {
-            background-color: transparent;
-            color: #ffffff;
-            border: 2px solid #ffffff; /* White border */
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        button:hover {
-            background-color: #ffffff; /* White background on hover */
-            color: #1a1a2e; /* Dark text on hover */
-        }
-
-        form {
-            background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        input[type="text"],
-        input[type="email"],
-        textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ffffff; /* White border */
-            border-radius: 4px;
-            background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent */
-            color: #ffffff; /* White text */
-        }
-
-        input[type="text"]:focus,
-        input[type="email"]:focus,
-        textarea:focus {
-            outline: none;
-            border-color: #ffffff; /* White border on focus */
-        }
-
-        /* Menu Styles */
-        .menu {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 10px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .menu ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .menu li {
-            padding: 10px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .menu li:hover {
-            background-color: rgba(255, 255, 255, 0.2); /* Lighten on hover */
-        }
-
-        /* Product Styles */
-        #products {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
-
-        .product {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .cart {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
-    </style>
 </head>
 <body>
 
-    <h1>Toko Kelontong Bapak Nurdin</h1>
+    <h1>Prismatic Shop</h1>
 
     <div class="container">
-        <div class="menu">
-            <h2>Menu</h2>
-            <ul>
-                <li>Category 1
-                    <ul>
-                        <li>Branch 1</li>
-                        <li>Branch 2</li>
-                    </ul>
-                </li>
-         <li>Category 2<ul>
-      <li>Branch 1</li>
-    <li>Branch 2</li>
+        <div id="products">
+            <div class="product">
+                <h2>Peta Republik Indonesia Serikat | Termasuk berbagai Kerajaan</h2>
+                <p>Price: Rp. 278.000</p>
+                <button onclick="addToCart('Peta Republik Indonesia Serikat | Termasuk berbagai Kerajaan', 278000)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <h2>Produk Gula Jawa Hitam | Varian Bango</h2>
+                <p>Price: Rp. 300.000</p>
+                <button onclick="addToCart('Produk Gula Jawa Hitam | Varian Bango', 300000)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <h2>Sempak Ronaldo</h2>
+                <p>Price: Rp. 1.240.000</p>
+                <button onclick="addToCart('Sempak Ronaldo', 1240000)">Add to Cart</button>
+            </div>
+        </div>
 
-    <div id="products">
-        <div class="product">
-            <h2>Peta Republik Indonesia Serikat | Termasuk berbagai Kerajaan</h2>
-            <p>Price: Rp. 278.000</p>
-            <button onclick="addToCart('Peta Republik Indonesia Serikat | Termasuk berbagai Kerajaan', 278.000)">Add to Cart</button>
+        <div class="cart">
+            <h2>Shopping Cart</h2>
+            <ul id="cartItems"></ul>
+            <p>Total: Rp. <span id="totalPrice">0</span></p>
+            <button onclick="checkout()">Checkout</button>
         </div>
-        <div class="product">
-            <h2>Produk Gula Jawa Hitam | Varian Bango</h2>
-            <p>Price: Rp.300.000</p>
-            <button onclick="addToCart('Produk Gula Jawa Hitam | Varian Bango', 300.000)">Add to Cart</button>
-        </div>
-        <div class="product">
-            <h2>Sempak Ronaldo</h2>
-            <p>Price: Rp.100.000</p>
-            <button onclick="addToCart('Sempak Ronaldo', 100.000)">Add to Cart</button>
-        </div>
-    </div>
-
-    <div class="cart">
-        <h2>Shopping Cart</h2>
-        <ul id="cartItems"></ul>
-        <p>Total: $<span id="totalPrice">0</span></p>
-        <button onclick="checkout()">Checkout</button>
     </div>
 
     <script src="script.js"></script>
