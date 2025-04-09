@@ -1,37 +1,34 @@
 let cart = [];
-let total = 0;
+let totalPrice = 0;
 
 function addToCart(productName, productPrice) {
-    // Add product to cart
     cart.push({ name: productName, price: productPrice });
-    total += productPrice;
-
-    // Update cart display
-    displayCart();
+    totalPrice += productPrice;
+    updateCart();
 }
 
-function displayCart() {
+function updateCart() {
     const cartItems = document.getElementById('cartItems');
-    cartItems.innerHTML = ''; // Clear current cart display
+    cartItems.innerHTML = ''; // Clear the cart items
 
     cart.forEach(item => {
         const li = document.createElement('li');
-        li.textContent = `${item.name} - $${item.price}`;
+        li.textContent = `${item.name} - ${toRupiah(item.price)}`;
         cartItems.appendChild(li);
     });
 
-    // Update total price
-    document.getElementById('totalPrice').textContent = total.toFixed(2);
+    document.getElementById('totalPrice').textContent = toRupiah(totalPrice);
 }
 
 function checkout() {
     if (cart.length === 0) {
         alert("Your cart is empty!");
-        return;
+        return{
+    } else {
+        alert("Proceeding to checkout...");
+        // Additional checkout logic can be added here
     }
-
-    // Here you can implement the checkout process
-    alert(`Thank you for your purchase! Your total is $${total.toFixed(2)}`);
+}    alert(`Thank you for your purchase! Your total is $${total.toRupiah(2)}`);
     
     // Clear cart
     cart = [];
