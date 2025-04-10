@@ -3,41 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alamak Negro</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <title>Negrostaurant</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
     <header>
-        <h1>Budak Hitam Shop</h1>
+        <h1>Welcome to Our Negro Restaurant</h1>
+        <nav>
+            <ul>
+                <li><a href="#appetizers">Appetizers</a></li>
+                <li><a href="#main-courses">Main Courses</a></li>
+                <li><a href="#desserts">Desserts</a></li>
+                <li><a href="#beverages">Beverages</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <div class="container">
-        <div id="products">
-            <div class="product">
-                <h2>Peta Republik Indonesia Serikat</h2>
-                <p>Price: Rp. 278.000</p>
-                <button onclick="addToCart('Peta Republik Indonesia Serikat', 278000)">Add to Cart</button>
-            </div>
-            <div class="product">
-                <h2>Produk Gula Jawa Hitam</h2>
-                <p>Price: Rp. 300.000</p>
-                <button onclick="addToCart('Produk Gula Jawa Hitam', 300000)">Add to Cart</button>
-            </div>
-            <div class="product">
-                <h2>Sempak Ronaldo</h2>
-                <p>Price: Rp. 1.240.000</p>
-                <button onclick="addToCart('Sempak Ronaldo', 1240000)">Add to Cart</button>
-            </div>
-        </div>
+    <main>
+        <section id="appetizers">
+            <h2>Appetizers</h2>
+            <ul>
+                <li onclick="showDetails('Bruschetta', 'Toasted bread topped with tomatoes, garlic, and basil - $5.00')">Bruschetta - $5.00</li>
+                <li onclick="showDetails('Stuffed Mushrooms', 'Mushrooms stuffed with cheese and herbs - $7.00')">Stuffed Mushrooms - $7.00</li>
+                <li onclick="showDetails('Garlic Bread', 'Freshly baked bread with garlic butter - $4.00')">Garlic Bread - $4.00</li>
+            </ul>
+        </section>
 
-        <div class="cart">
-            <h2>Shopping Cart</h2>
-            <ul id="cartItems"></ul>
-            <p>Total: Rp. <span id="totalPrice">0</span></p>
-            <button onclick="checkout()">Checkout</button>
-        </div>
-    </div>
+        <section id="main-courses">
+            <h2>Main Courses</h2>
+            <ul>
+                <li onclick="showDetails('Grilled Salmon', 'Salmon fillet grilled to perfection - $15.00')">Grilled Salmon - $15.00</li>
+                <li onclick="showDetails('Steak Frites', 'Juicy steak served with fries - $20.00')">Steak Frites - $20.00</li>
+                <li onclick="showDetails('Pasta Primavera', 'Pasta with seasonal vegetables - $12.00')">Pasta Primavera - $12.00</li>
+            </ul>
+        </section>
+
+        <section id="desserts">
+            <h2>Desserts</h2>
+            <ul>
+                <li onclick="showDetails('Tiramisu', 'Classic Italian dessert with coffee and mascarpone - $6.00')">Tiramisu - $6.00</li>
+                <li onclick="showDetails('Cheesecake', 'Creamy cheesecake with a graham cracker crust - $5.00')">Cheesecake - $5.00</li>
+                <li onclick="showDetails('Chocolate Mousse', 'Rich chocolate mousse topped with whipped cream - $7.00')">Chocolate Mousse - $7.00</li>
+            </ul>
+        </section>
+
+        <section id="beverages">
+            <h2>Beverages</h2>
+            <ul>
+                <li onclick="showDetails('Coffee', 'Freshly brewed coffee - $2.00')">Coffee - $2.00</li>
+                <li onclick="showDetails('Tea', 'A selection of herbal and black teas - $2.00')">Tea - $2.00</li>
+                <li onclick="showDetails('Soda', 'Refreshing soda drinks - $1.50')">Soda - $1.50</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Our Restaurant. All rights reserved.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
